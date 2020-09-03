@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<img src="title.png" alt="title" width="16" height="16">
+	<link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/grid.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+	<!-- Inicio Menu e apresentação -->
+
+	<header class="header">
+		<div class="container">
+			<a href="/" class="grid-4">
+				<img src="img/logo.svg" alt="LOGO">
+				<nav class="grid-12 header_menu">
+					<ul>
+						<li><a href="/clientes">Clientes</a></li>
+						<li><a href="/portifolio">portifolio</a></li>
+						<li><a href="/contato">contato</a></li>
+					</ul>
+				</nav>
+			</a>
+		</div>
+	</header>
+
+
+	<!--
+			inicio
+			Loop de imagens
+		-->
+
+	<main class="container" style="margin-top: 180px;">
+		<div class="jumbotron">
+			<h1>portifolio</h1>
+
+			<form action="/portifolio" method="GET">
+				<div class="md-form active-cyan active-cyan-2 md-3">
+					<input class="form-control" type="text" placeholder="Procure categoria" name="search">
+					<button class="btn btn-danger" type="submit">Pesquisar</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="container">
+			<div class="row row-cols-1 row-cols-md-3">
+				<% img.forEach(img => { %>
+				<div class="col md-3">
+					<!-- Card Dark -->
+					<div class="card">
+
+						<!-- Card image -->
+						<div class="view overlay">
+							<img class="card-img-top"
+								style="max-width: 350px; max-height: 350px; min-width: 350px; min-height: 350px;"
+								src="<%= img.media_url %>" alt="Card image cap">
+							<a>
+								<div class="mask rgba-white-slight"></div>
+							</a>
+						</div>
+
+						<!-- Card content -->
+						<div class="card-body elegant-color white-text rounded-bottom">
+
+							<!-- Title -->
+							<h4 class="card-title"><%= img.username %></h4>
+							<hr class="hr-light">
+							<!-- Text -->
+							<p class="card-text ">
+							<ul>
+								<li>
+									Descrição: <%=  img.caption %><br />
+								</li>
+							</ul>
+							</p>
+
+							<!-- Link -->
+							<a href="<%= img.permalink %>"  target="_blank"><button class="btn btn-danger" type="submit">Detalhes</button></a>
+						
+						</div>
+
+						</p>
+						<ol>
+					</div>
+					<!-- End Card-->
+				</div>
+				<% }) %>
+			</div>
+		</div>
+	</main>
+
+	<!--
+			Fim
+			Loop de imagens
+		-->
+
+
+	<section class="quebra">
+		<blockquote class="quote-externo container">
+			<p class="neve">"Ainda assim, existem dúvidas a respeito da qualidade do nosso serviço? Venha conferir."</p>
+		</blockquote>
+	</section>
+
+	<!-- Inicio  Rodapé-->
+
+	<footer>
+		<div class="footer">
+			<div class="container">
+
+				<!-- Historia -->
+
+				<div class="grid-8 footer-historia">
+					<h3>Um pouco sobre a empresa</h3>
+					<p class="neve">################ </p>
+				</div>
+
+				<!--  Contato -->
+
+				<div class="grid-4 footer_contatos">
+					<h3>contato</h3>
+					<ul>
+						<li><img src="/img/redes-sociais/fixo.svg" alt="fixo"></img>- 88 9 9960-9422</li>
+						<li><img src="/img/redes-sociais/whatsapp.svg" alt="whatsapp">- 88 2147-0298</li>
+						<li><img src="/img/redes-sociais/localizacao.svg" alt="localizacao">- Av. Plácido Castelo, 2090 - Centro,
+							Quixadá - CE, 63900-076</li>
+					</ul>
+				</div>
+
+				<!-- Redes -->
+
+				<div class="grid-4 footer_redes">
+					<h3>Contato</h3>
+					<ul>
+						<li><a href="https://www.facebook.com/pedro.leitedesousa.7" target="_blank"><img
+									src="img/redes-sociais/facebook.svg" alt="facebook"></a></li>
+						<li><a href="https://www.instagram.com/pedroadesivodequixada/" target="_blank"><img
+									src="img/redes-sociais/instagram.svg" alt="instagram"></a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+
+
+		<div class="copy">
+			<div class="container">
+				<p class="grid-16">Pedro Adesivos - Direitos reservados</p> Icons made by <a
+					href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+					href="https://www.flaticon.com/" title="Flaticon" target="_blank"> www.flaticon.com</a>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>
