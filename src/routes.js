@@ -1,5 +1,5 @@
-import { Router } from'express';
-import api from'./helpers/api';
+const { Router } = require('express');
+const api = require('./helpers/api');
 
 
 const routes = new Router();
@@ -28,4 +28,4 @@ routes.get('/contato', (req, res) => {
   return res.render('contato');
 });
 
-export default routes;
+module.exports = routes;
